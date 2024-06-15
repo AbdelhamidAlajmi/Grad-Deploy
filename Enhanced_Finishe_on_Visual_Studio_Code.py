@@ -14,7 +14,6 @@ from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
 from classify_portfolio import classify_portfolio
 from create_users_stocks_pairs import create_users_stocks_pairs
 from Fetch_data import symbols
