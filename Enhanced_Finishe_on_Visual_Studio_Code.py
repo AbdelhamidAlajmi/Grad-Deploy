@@ -9,10 +9,8 @@ import numpy as np
 import warnings
 warnings.filterwarnings("ignore")
 import concurrent.futures
-import sklearn
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
-from tensorflow import keras
 from sklearn.model_selection import train_test_split
 from classify_portfolio import classify_portfolio
 from create_users_stocks_pairs import create_users_stocks_pairs
