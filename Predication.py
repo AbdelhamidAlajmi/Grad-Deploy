@@ -4,8 +4,9 @@ from tensorflow.keras.models import load_model
 from Enhanced_Finishe_on_Visual_Studio_Code import investment
 from Preprocess import new_user_df
 
-model_path=r'C:\Users\AJM\Grad\Api_Final\Final_Model.h5'
+model_path=r"C:\Users\AJM\Grad\Api_Final_Production\Final_Model.h5"
 model=load_model(model_path)
+
 
 
 def prediction(preprocessed_data_user,preprocessed_data_stock,new_user_df):
@@ -33,11 +34,28 @@ def prediction(preprocessed_data_user,preprocessed_data_stock,new_user_df):
 
 
     recommended_companies = []
-    for i in range(num_of_recommended_stocks):
+    for i,symbol in enumerate(symbols_of_recommended_stocks):
         recommended_companies.append({
             f"company_name_{i+1}": names_of_recommended_stocks[i],
             f"symbol_{i+1}": symbols_of_recommended_stocks[i],
-            f"price_{i+1}": prices_of_recommended_stocks[i]
+            f"Open_price_{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['Open'].iloc[0],
+            f"High_price_{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['High'].iloc[0],
+            f"Low_price_{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['Low'].iloc[0],
+            f"Close_price_{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['Close'].iloc[0],
+            f"Volume_{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['Volume'].iloc[0],
+            f"Market_capital_{i+1}": float(investment_data.loc[investment_data['Symbol'] == symbol]['Market Capital'].iloc[0]),
+            f"forward_eps{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['ForwardEps'].iloc[0],
+            f"revenue_growth_{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['Revenue Growth'].iloc[0],
+            f"profit_margin_{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['Profit Margins'].iloc[0],
+            f"dividend_yield_{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['Dividend Yield'].iloc[0],
+            f"payout_ratio_{i+1}": investment_data.loc[investment_data['Symbol'] == symbol]['Payout Ratio'].iloc[0],
+            f"StrongBuy_{i+1}": float(investment_data.loc[investment_data['Symbol'] == symbol]['StrongBuy'].iloc[0]),
+            f"Buy_{i+1}": float(investment_data.loc[investment_data['Symbol'] == symbol]['Buy'].iloc[0]),
+            f"Hold_{i+1}": float(investment_data.loc[investment_data['Symbol'] == symbol]['Hold'].iloc[0]),
+            f"Sell_{i+1}": float(investment_data.loc[investment_data['Symbol'] == symbol]['Sell'].iloc[0]),
+            f"StrongSell_{i+1}": float(investment_data.loc[investment_data['Symbol'] == symbol]['StrongSell'].iloc[0]),
+            f"RecommendationMean_{i+1}": float(investment_data.loc[investment_data['Symbol'] == symbol]['RecommendationMean'].iloc[0])
+
         })
 
-    return recommended_companies
+    return recommended_companies , symbols_of_recommended_stocks

@@ -18,7 +18,7 @@ def create_users_stocks_pairs(classified_user_portfolio, X_investment_norm_df, S
     # Creating a comprehensive list of columns for the final DataFrame
     columns = ['User ID', 'Portfolio', 'Budget in Usd', 'Time frame in Months', 'Risk Tolerance %', 'Capital Preservation',
                'Liquidity & Accessibilty', 'Modest Growth', 'Stable Income Generation', 'Potential Growth', 'Moderate Volatility',
-               'Sector & Industry Focus', 'Stock ID', 'Open', 'Close', 'High', 'Volume', 'Shares Out Standing', 'Float Shares',
+               'Sector & Industry Focus', 'Stock ID', 'Open', 'Close', 'High','Low' ,'Volume', 'Shares Out Standing', 'Float Shares',
                'Shares Percent SharesOut', 'Dividends', 'Dividend Yield', 'Payout Ratio', 'Stock Splits', 'Revenue Growth',
                'Profit Margins', 'Market Capital', 'Free Cash Flow', 'Debt To Equity', 'beta', 'Overall Risk', 'return on equity',
                'Earnings per share', 'ForwardEps', 'pegRatio', 'Forward PE', 'StrongBuy', 'Buy', 'Hold', 'Sell', 'StrongSell',
