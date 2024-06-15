@@ -11,6 +11,7 @@ warnings.filterwarnings("ignore")
 import concurrent.futures
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
+import keras
 from sklearn.model_selection import train_test_split
 from classify_portfolio import classify_portfolio
 from create_users_stocks_pairs import create_users_stocks_pairs
