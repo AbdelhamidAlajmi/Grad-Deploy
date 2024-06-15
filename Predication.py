@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from tensorflow.keras.models import load_model
-from Enhanced_Finishe_on_Visual_Studio_Code import investment
+from Enhanced_Finishe_on_Visual_Studio_Code import investment , investment_data
 from Preprocess import new_user_df
 
 model_path=r"C:\Users\AJM\Grad\Api_Final_Production\Final_Model.h5"

@@ -12,8 +12,10 @@ app=Flask(__name__)
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    
     # Get the JSON data from the request
     input_data = request.get_json()
+
     # Apply preprocessing
     preprocessed_data_user, preprocessed_data_stock = preprocess(input_data, classified_user_portfolio, create_users_stocks_pairs)
 
