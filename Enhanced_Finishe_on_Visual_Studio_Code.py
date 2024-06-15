@@ -84,7 +84,7 @@ X_investment_norm_df.insert(0,'Stock ID',X_investment_norm_df.index,False)
 # User Data
 
 # Read Portfolio dataset
-portfolio_df=pd.read_csv('portfolio.CSV')
+portfolio_df=pd.read_csv('portfolio.csv')
 
 # Create an empty DataFrame
 random_user = pd.DataFrame()
