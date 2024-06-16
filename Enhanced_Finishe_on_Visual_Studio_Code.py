@@ -19,7 +19,7 @@ from Fetch_data import symbols
 from Fetch_data import fetch
 
 
-# Fetch Data From YFinance Lib
+# Fetch Data From YFinance Lib for speeding in local
 
 # print("concurrent start")
 
