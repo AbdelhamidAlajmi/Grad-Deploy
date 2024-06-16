@@ -41,8 +41,6 @@ for symbol in symbols:
     if result:
         investment_data.append(result)
 
-print("concurrent end")
-
 
 investment_data = pd.DataFrame(investment_data)
 
