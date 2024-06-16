@@ -23,23 +23,26 @@ from Fetch_data import fetch
 
 # print("concurrent start")
 
-# investment_data = []
-# with concurrent.futures.ThreadPoolExecutor() as executor:
-#     results = executor.map(fetch, symbols)
-#     for result in results:
-#         if result:
-#             investment_data.append(result)
+investment_data = []
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    results = executor.map(fetch, symbols)
+    for result in results:
+        if result:
+            investment_data.append(result)
 
 # print("concurrent end")
 
 
-investment_data = []
 
-# Sequentially fetch data for each symbol
-for symbol in symbols:
-    result = fetch(symbol)
-    if result:
-        investment_data.append(result)
+
+# Fetch Data From YFinance Lib for no_concurrency in server
+# investment_data = []
+
+# # Sequentially fetch data for each symbol
+# for symbol in symbols:
+#     result = fetch(symbol)
+#     if result:
+#         investment_data.append(result)
 
 
 investment_data = pd.DataFrame(investment_data)
