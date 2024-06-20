@@ -6,11 +6,11 @@ from Preprocess import new_user_df
 
 
 #for Local Testing
-model_path=r"C:\Users\AJM\Grad\Api_Final_Production\Final_Model.h5"
-model=load_model(model_path)
+#model_path=r"C:\Users\AJM\Grad\Api_Final_Production\Final_Model.h5"
+#model=load_model(model_path)
 
 #for server
-#model=load_model(Final_Model.h5)
+model=load_model(Final_Model.h5)
 
 
 def prediction(preprocessed_data_user,preprocessed_data_stock,new_user_df):
